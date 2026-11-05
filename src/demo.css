@@ -1,0 +1,41 @@
+/*
+  Tema das demos. Cada demo define variáveis (--bg, --ink, --accent...) no wrapper,
+  e trocar de estilo (ex.: Moderno × Vintage) é só trocar o conjunto de variáveis.
+  Fica separado do index.css da Avance de propósito.
+*/
+.d { background: var(--bg); color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; transition: background .3s, color .3s; }
+.d :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.d ::selection { background: var(--accent); color: var(--onaccent); }
+.d-display { font-family: var(--display); font-weight: var(--dw, 600); }
+
+.bg-d-surface { background: var(--surface); }
+.bg-d-accent { background: var(--accent); }
+.bg-d-line { background: var(--line); }
+.bg-d-inv { background: var(--inv, var(--surface)); color: var(--inv-ink, var(--ink)); }
+.text-d-muted { color: var(--muted); }
+.text-d-accent { color: var(--accent); }
+.text-d-onaccent { color: var(--onaccent); }
+.border-d { border: 1px solid var(--line); }
+.border-d-t { border-top: 1px solid var(--line); }
+.border-d-b { border-bottom: 1px solid var(--line); }
+.border-d-accent { border-color: var(--accent); }
+.r-d { border-radius: var(--r); }
+.link-d { color: var(--muted); transition: color .2s; }
+.link-d:hover { color: var(--ink); }
+
+.btn-d { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: var(--accent); color: var(--onaccent); padding: .9rem 1.5rem; border-radius: var(--r-btn); font-weight: 600; transition: filter .2s, transform .2s; cursor: pointer; }
+.btn-d:hover:not(:disabled) { filter: brightness(1.12); transform: translateY(-1px); }
+.btn-d:disabled { opacity: .4; cursor: not-allowed; }
+.btn-d-sm { padding: .55rem 1.1rem; font-size: .875rem; }
+.btn-d-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn-d-ghost:hover:not(:disabled) { border-color: var(--accent); filter: none; }
+
+.chip-d { border: 1px solid var(--line); padding: .6rem 1rem; border-radius: var(--r-btn); text-align: left; transition: border-color .2s, background .2s; cursor: pointer; }
+.chip-d:hover:not(:disabled) { border-color: var(--accent); }
+.chip-d[aria-pressed="true"] { background: var(--accent); color: var(--onaccent); border-color: var(--accent); }
+.chip-d:disabled { opacity: .35; text-decoration: line-through; cursor: not-allowed; }
+
+.field-d { width: 100%; background: transparent; border: 1px solid var(--line); padding: .8rem 1rem; border-radius: var(--r); color: var(--ink); }
+.field-d::placeholder { color: var(--muted); opacity: .8; }
+.field-d:focus { border-color: var(--accent); outline: none; }
+.field-d option { color: #111; }
